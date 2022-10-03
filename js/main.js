@@ -66,25 +66,6 @@ function createCubered(size, positionX) {
 camera.position.z = 10;
 const loader = new THREE.GLTFLoader();
 
-// class Doll {
-//   constructor() {
-//     loader.load("../models/scene.gltf", (gltf) => {
-//       scene.add(gltf.scene);
-//       gltf.scene.scale.set(0.3, 0.3, 0.3);
-//       gltf.scale.position.set(0,0.8, 0);
-//       this.doll = gltf.scene;
-//     });
-//   }
-//   lookBackward() {
-//     gsap.to(doll.rotation, { duration: 0.45, y: -3.15 });
-//   }
-//   lookForward() {
-//     gsap.to(doll.rotation, { duration: 0.45, y: -0 });
-//   }
-// }
-
-// let doll = new Doll();
-
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -125,15 +106,6 @@ async function start() {
   start();
 }
 
-// setTimeout(() => {
-//   lookBackward();
-// }, 1000);
-// setTimeout(() => {
-//   lookForward();
-// }, 2000);
-// setTimeout(() => {
-//   start();
-// }, 1000);
 
 async function init() {
   await delay(500);
@@ -147,8 +119,6 @@ async function init() {
   startGame();
 }
 function startGame() {
-  // let progressbar = createCubepro({ w: 9, h: 1, d: 1 }, 0, colors);
-  // progressbar.position.y = 7.0;
   gamestart = "started";
   start();
 }
@@ -187,13 +157,11 @@ class Player {
     if (this.playerInfo.velocity > 0 && !isLookingback) {
       text.innerText = "You Lose";
       ans = true;
-      textr=false;
       gamestart = "Over";
     }
     if (this.playerInfo.positionX < endposition) {
       text.innerText = "You Win";
       ans = true;
-      textr=true;
       gamestart = "Over";
     }
   }
