@@ -115,7 +115,7 @@ function lookForward() {
   let progressbar = createCubered({ w: 9, h: 1, d: 1 }, 0);
   progressbar.position.y = 7.0;
   gsap.to(doll.rotation, { duration: 0.45, y: -0 });
-  setTimeout(() => (isLookingback = false), 450);
+  setTimeout(() => (isLookingback = false), 500);
 }
 
 async function start() {
@@ -182,7 +182,7 @@ class Player {
     };
   }
   run() {
-    this.playerInfo.velocity = 0.04;
+    this.playerInfo.velocity = 0.03;
   }
   check() {
     if (this.playerInfo.velocity > 0 && !isLookingback) {
