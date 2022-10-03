@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.text{
+    position: fixed;
+    font-size: 60px;
+    /* margin-left: 400px; */
+    left: 30%;
+    /* transform: translateX(-50%); */
+    top: 10px;
+}
