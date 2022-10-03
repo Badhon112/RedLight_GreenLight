@@ -21,7 +21,6 @@ const text = document.querySelector(".text");
 let gamestart = "Loading";
 let isLookingback = true;
 let ans = false;
-let colors;
 function createCubeF(size, positionX, positionY) {
   const geometry = new THREE.BoxGeometry(size.w, size.h, size.d);
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -188,11 +187,13 @@ class Player {
     if (this.playerInfo.velocity > 0 && !isLookingback) {
       text.innerText = "You Lose";
       ans = true;
+      textr=false;
       gamestart = "Over";
     }
     if (this.playerInfo.positionX < endposition) {
       text.innerText = "You Win";
       ans = true;
+      textr=true;
       gamestart = "Over";
     }
   }
